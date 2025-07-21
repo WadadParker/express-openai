@@ -1,5 +1,6 @@
 import express from "express"
 import { chatService } from './services/chatService.js'
+import { streamService } from "./services/streamService.js"
 
 const PORT = 3000
 
@@ -22,5 +23,6 @@ app.get('/' , (req,res) => {
 })
 
 app.post('/api/chat',chatService)
+app.post('/api/stream',streamService)
 
 app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`))
